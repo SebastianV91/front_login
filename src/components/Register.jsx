@@ -1,20 +1,25 @@
 import {  useState } from "react";
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 function Register() {
 
-    const [employeename, setEmployeename] = useState("");
+    const [employeeName, setEmployeename] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     async function save(event) {
         event.preventDefault();
         try {
           await axios.post("http://localhost:8084/api/v1/employee/save", {
-          employeename: employeename,
+          employeeName: employeeName,
           email: email,
           password: password,
           });
-          alert("Employee Registration Successfully");
+          Swal.fire({
+            title: "Congratulations!",
+            text: "Employee Registration Successfully",
+            icon: "success"
+          });
         } catch (err) {
           alert(err);
         }
@@ -34,7 +39,7 @@ function Register() {
           <label>Employee name</label>
           <input type="text"  class="form-control" id="employeename" placeholder="Enter Name"
           
-          value={employeename}
+          value={employeeName}
           onChange={(event) => {
             setEmployeename(event.target.value);
           }}

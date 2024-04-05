@@ -1,6 +1,7 @@
 import {  useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 function Login() {
 
@@ -19,7 +20,11 @@ function Login() {
              
              if (res.data.message == "Email not exits") 
              {
-               alert("Email not exits");
+                Swal.fire({
+                  title: "Warning!",
+                  text: "Email not exits",
+                  icon: "info"
+                });
              } 
              else if(res.data.message == "Login Success")
              { 
@@ -28,7 +33,11 @@ function Login() {
              } 
               else 
              { 
-                alert("Incorrect Email and Password not match");
+                  Swal.fire({
+                    title: "Warning!",
+                    text: "Incorrect Email and Password not match",
+                    icon: "info"
+                  });
              }
           }, fail => {
            console.error(fail); // Error!
