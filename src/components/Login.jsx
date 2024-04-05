@@ -1,12 +1,15 @@
 import './App.css';
 import Register from "./components/Register";
 
-function App() {
+function Login() {
+
+
+
   return (
     <div>
-        <Register/>
+        
     </div>
   );
 }
 
-export default App;
+export default Login;
