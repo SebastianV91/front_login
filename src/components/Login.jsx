@@ -52,6 +52,11 @@ function Login() {
 
   return (
     <div>
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <a href="/register" className="navbar-brand">
+            Register here
+          </a>
+      </nav>
         <div class="container">
             <div class="row">
                 <h2>Login</h2>

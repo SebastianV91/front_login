@@ -30,6 +30,11 @@ function Register() {
       <div>
 
 <div>
+<nav className="navbar navbar-expand navbar-dark bg-dark">
+      <a href="/" className="navbar-brand">
+            Login
+          </a>
+      </nav>
     <div class="container mt-4" >
     <div class="card">
             <h1>Student Registation</h1>
